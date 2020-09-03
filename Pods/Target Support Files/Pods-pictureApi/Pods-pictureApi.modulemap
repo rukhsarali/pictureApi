@@ -1,0 +1,6 @@
+framework module Pods_pictureApi {
+  umbrella header "Pods-pictureApi-umbrella.h"
+
+  export *
+  module * { export * }
+}
