@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mTV-wy-ovI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mTV-wy-ovI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -72,11 +72,58 @@
                     <navigationItem key="navigationItem" title="Albums" id="ZT7-Ee-xaP"/>
                     <connections>
                         <outlet property="tableView" destination="WTO-vX-AqT" id="I03-VG-cF9"/>
+                        <segue destination="bDG-u4-OT2" kind="show" identifier="DetailView" id="5tv-Ma-0JM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="8Z8-j0-Num">
+            <objects>
+                <viewController id="bDG-u4-OT2" customClass="DetailViewController" customModule="pictureApi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XEW-Mh-VfI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="eXd-9O-UNo">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nAh-kH-0uk">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="nAh-kH-0uk" firstAttribute="height" secondItem="eXd-9O-UNo" secondAttribute="height" id="AIE-W3-dUu"/>
+                                    <constraint firstItem="nAh-kH-0uk" firstAttribute="top" secondItem="eXd-9O-UNo" secondAttribute="top" id="LLo-Qk-AbC"/>
+                                    <constraint firstItem="nAh-kH-0uk" firstAttribute="leading" secondItem="eXd-9O-UNo" secondAttribute="leading" id="ORH-Pb-TmR"/>
+                                    <constraint firstAttribute="bottom" secondItem="nAh-kH-0uk" secondAttribute="bottom" id="OWm-o9-XBG"/>
+                                    <constraint firstItem="nAh-kH-0uk" firstAttribute="width" secondItem="eXd-9O-UNo" secondAttribute="width" id="gfG-3t-O1l"/>
+                                    <constraint firstAttribute="trailing" secondItem="nAh-kH-0uk" secondAttribute="trailing" id="rln-6L-djs"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="4xP-nW-2Ey"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="CEi-gB-kpw"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="eXd-9O-UNo" firstAttribute="trailing" secondItem="eyw-gq-eMO" secondAttribute="trailing" id="66X-Yq-Cg0"/>
+                            <constraint firstItem="eXd-9O-UNo" firstAttribute="top" secondItem="eyw-gq-eMO" secondAttribute="top" id="7Ik-LV-Tdg"/>
+                            <constraint firstAttribute="bottom" secondItem="eXd-9O-UNo" secondAttribute="bottom" id="QOW-Oq-un4"/>
+                            <constraint firstItem="eXd-9O-UNo" firstAttribute="leading" secondItem="eyw-gq-eMO" secondAttribute="leading" id="eXA-m0-NSu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eyw-gq-eMO"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9t2-uy-DSZ"/>
+                    <connections>
+                        <outlet property="imageView" destination="nAh-kH-0uk" id="o6Y-Qm-Qwa"/>
+                        <outlet property="scrollView" destination="eXd-9O-UNo" id="wtV-7t-aqQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mms-mA-ZVT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828.985507246377" y="135.9375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R9j-Vz-TjS">

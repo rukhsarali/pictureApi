@@ -1,16 +1,20 @@
 PODS:
   - Alamofire (4.9.1)
+  - GSImageViewerController (1.6.2)
 
 DEPENDENCIES:
   - Alamofire
+  - GSImageViewerController
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - GSImageViewerController
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  GSImageViewerController: 3b8fb7d2ab7596152329d7910eeb1905b2284cb9
 
-PODFILE CHECKSUM: 16954565e6f9a26b60334668092bc8dd44668a48
+PODFILE CHECKSUM: a445e42e8cf4761a39295bc8d5a0619339889f37
 
 COCOAPODS: 1.9.3

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		9038DBF624F8E82C007C7BF6 /* PictureApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9038DBF524F8E82C007C7BF6 /* PictureApiRequest.swift */; };
 		9038DBF924F8E85F007C7BF6 /* PictureApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9038DBF824F8E85F007C7BF6 /* PictureApi.swift */; };
 		9038DBFB24F8F1A7007C7BF6 /* CustomizeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9038DBFA24F8F1A7007C7BF6 /* CustomizeTableViewCell.swift */; };
+		907D706825027F4600E3FD04 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907D706725027F4600E3FD04 /* DetailViewController.swift */; };
 		D3A31119E17540013D8F5F03 /* Pods_pictureApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075A52AB8AA55A738F28E85D /* Pods_pictureApi.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		9038DBF524F8E82C007C7BF6 /* PictureApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureApiRequest.swift; sourceTree = "<group>"; };
 		9038DBF824F8E85F007C7BF6 /* PictureApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureApi.swift; sourceTree = "<group>"; };
 		9038DBFA24F8F1A7007C7BF6 /* CustomizeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeTableViewCell.swift; sourceTree = "<group>"; };
+		907D706725027F4600E3FD04 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D69D080F600518B3C0C33EB1 /* Pods-pictureApi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pictureApi.release.xcconfig"; path = "Target Support Files/Pods-pictureApi/Pods-pictureApi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,7 +56,6 @@
 				443ECCCF398EECDEA8425BD4 /* Pods-pictureApi.debug.xcconfig */,
 				D69D080F600518B3C0C33EB1 /* Pods-pictureApi.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -103,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				9038DBE324F8E655007C7BF6 /* ViewController.swift */,
+				907D706725027F4600E3FD04 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -246,6 +248,7 @@
 				9038DBFB24F8F1A7007C7BF6 /* CustomizeTableViewCell.swift in Sources */,
 				9038DBE224F8E655007C7BF6 /* SceneDelegate.swift in Sources */,
 				9038DBF924F8E85F007C7BF6 /* PictureApi.swift in Sources */,
+				907D706825027F4600E3FD04 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93SU3LG259;
 				INFOPLIST_FILE = pictureApi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -409,6 +413,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93SU3LG259;
 				INFOPLIST_FILE = pictureApi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

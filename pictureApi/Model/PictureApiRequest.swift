@@ -13,7 +13,7 @@ struct PictureApiRequest {
     let pictureApiUrl = "https://jsonplaceholder.typicode.com/photos"
     
     func performRequest(completion: @escaping(Result<[PictureApi]>)-> Void){
-        Alamofire.request("https://jsonplaceholder.typicode.com/photos").response{ response in
+        Alamofire.request(pictureApiUrl).response{ response in
             if let safeData = response.data{
             let decoder = JSONDecoder()
             do {

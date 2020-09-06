@@ -11,4 +11,5 @@ import Foundation
 struct PictureApi: Codable{
     var title : String
     var url : String
+    var thumbnailUrl : String
 }

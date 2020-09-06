@@ -21,8 +21,6 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         loadData()
     }
-    
-    
 }
 //MARK: - load Data
 extension ViewController {
@@ -51,12 +49,17 @@ extension ViewController : UITableViewDelegate , UITableViewDataSource {
         return 70
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "DetailView", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! DetailViewController
+        destinationVC.imageViewDetail = pictureRec[(tableView.indexPathForSelectedRow?.row)!]
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomizeTableViewCell
         cell.cellLabel.text = pictureRec[indexPath.row].title
-        cell.cellImageView.load(url: pictureRec[indexPath.row].url)
+        cell.cellImageView.load(url: pictureRec[indexPath.row].thumbnailUrl)
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.6324253375, green: 0.7843137255, blue: 0.9803921569, alpha: 1)
         cell.backgroundColor = #colorLiteral(red: 0.9458476027, green: 1, blue: 1, alpha: 1)
         return cell
