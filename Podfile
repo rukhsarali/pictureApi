@@ -7,4 +7,5 @@ target 'pictureApi' do
   # Pods for pictureApi
   pod 'Alamofire'
   pod "GSImageViewerController"
+  pod 'SDWebImage'
 end

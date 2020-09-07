@@ -7,19 +7,33 @@
 //
 
 import UIKit
-
+import SDWebImage
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     var imageViewDetail : PictureApi?
+     var pictureRec = [PictureApi]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollView.minimumZoomScale = 1
         self.scrollView.maximumZoomScale = 6
         scrollView.delegate = self
-        imageView.load(url: imageViewDetail!.url)
         scrollView.backgroundColor = UIColor.black
+        imageSet()
+    }
+}
+//MARK: - imageSet method
+extension DetailViewController {
+    func imageSet () {
+        let url = URL(string: imageViewDetail!.url)
+        imageView.sd_setImage(with: url, placeholderImage: nil, options: SDWebImageOptions.highPriority, context: nil, progress: nil) { (Image, Error, Cache, Url) in
+            if let error = Error {
+                print("error during detail Image \(error)")
+            }else {
+                print("success in detail")
+            }
+        }
     }
 }
 //MARK: - scrollView method

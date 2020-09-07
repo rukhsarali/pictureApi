@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -58,15 +58,22 @@ extension ViewController : UITableViewDelegate , UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomizeTableViewCell
+        let url =  URL(string: pictureRec[indexPath.row].thumbnailUrl)
         cell.cellLabel.text = pictureRec[indexPath.row].title
-        cell.cellImageView.load(url: pictureRec[indexPath.row].thumbnailUrl)
+        cell.cellImageView.sd_setImage(with: url, placeholderImage: nil, options: SDWebImageOptions.highPriority, context: nil, progress: nil) { (Image, Error, Cache, Url) in
+            if let error = Error {
+                print("Error occur during downloading image\(error)")
+            }else {
+                print("success")
+            }
+        }
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.6324253375, green: 0.7843137255, blue: 0.9803921569, alpha: 1)
         cell.backgroundColor = #colorLiteral(red: 0.9458476027, green: 1, blue: 1, alpha: 1)
         return cell
     }
     //for animate tableViewCell
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity , -500 , 50 , 0)
+        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity , 0 , 50 , 0)
         cell.layer.transform = rotationTransform
         cell.alpha = 0
         UIView.animate(withDuration: 0.5) {
@@ -75,26 +82,4 @@ extension ViewController : UITableViewDelegate , UITableViewDataSource {
         }
     }
 }
-var imageCache = NSCache<AnyObject , AnyObject>()       //imageCache
-extension UIImageView {
-    func load(url: String) {
-        
-        if let image = imageCache.object(forKey: url as NSString) as? UIImage{ //imageCache
-            self.image = image
-            return
-        } //imageCache
-        guard let uRL = URL(string: url) else {
-            return
-        }
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: uRL) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        imageCache.setObject(image, forKey: url as NSString) //imageCache
-                        self?.image = image
-                    }
-                }
-            }
-        }
-    }
-}
+
